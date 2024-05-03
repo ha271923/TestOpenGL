@@ -13,7 +13,13 @@ https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0-win32.zip/down
 https://github.com/glfw/glfw/releases/download/3.4/glfw-3.4.bin.WIN32.zip
 
 # C. Setup Visual Studio 2019
-Solution Explorer\Project\Right Click\Properties  
+### Install Visual Studio with C++ componment
+Run Visual Studio 2019\Tools\Get Tools and Features\Use C++ ...
+
+## Setup this Project
+Solution Explorer\Project\Right Click\Properties    
+### Configurations and Platforms
+both to All
 ### C++\General\Additional Include Directories
 D:\Tools\OpenGL\glfw-3.4.bin.WIN32\include  
 D:\Tools\OpenGL\glew-2.1.0\include  
