@@ -1,0 +1,7 @@
+[Dd]ebug/
+[Rr]elease/
+
+# Visual Studio cache directory
+.vs/
+TestOpenGL/Debug
+TestOpenGL/Release
