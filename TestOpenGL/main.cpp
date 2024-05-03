@@ -16,10 +16,14 @@ const char* fragmentShaderSrc =
 "void main()                                               \n "
 "        FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);}        \n ";
 
-float vertices[] = {
+float vertices[] = { // OpenGL's draw point sequence is clockwise
     -0.5f, -0.5f, 0.0f,
      0.5f, -0.5f, 0.0f,
-     0.0f,  0.5f, 0.0f
+     0.0f,  0.5f, 0.0f,
+
+     0.5f, -0.5f, 0.0f,
+     0.0f,  0.5f, 0.0f,
+     0.8f, 0.8f, 0.0f
 };
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -54,6 +58,7 @@ int main()
 
     // setup viewport
     glViewport(0, 0, 800, 600);
+
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
     createATriangle();
@@ -136,5 +141,5 @@ void createATriangle() {
 void drawATriangle() {
     glBindVertexArray(VAO);
     glUseProgram(shaderProgram);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
 }
