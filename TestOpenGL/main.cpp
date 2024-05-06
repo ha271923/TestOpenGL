@@ -59,6 +59,13 @@ int main()
     // setup viewport
     glViewport(0, 0, 800, 600);
 
+#if ENABLE_CULL_FACE
+    // for do not draw front/back side of triangle
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
+    // glCullFace(GL_FRONT);
+#endif
+
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
     createATriangle();
