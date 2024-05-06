@@ -17,13 +17,18 @@ const char* fragmentShaderSrc =
 "        FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);}        \n ";
 
 float vertices[] = { // OpenGL's draw point sequence is clockwise
-    -0.5f, -0.5f, 0.0f,
-     0.5f, -0.5f, 0.0f,
-     0.0f,  0.5f, 0.0f,
+    -0.5f, -0.5f, 0.0f, // idx=1
+     0.5f, -0.5f, 0.0f, // idx=2
+     0.0f,  0.5f, 0.0f, // idx=3
 
-     0.5f, -0.5f, 0.0f,
-     0.0f,  0.5f, 0.0f,
-     0.8f, 0.8f, 0.0f
+     // 0.5f, -0.5f, 0.0f, // same with idx2
+     // 0.0f,  0.5f, 0.0f, // same with idx3
+     0.8f, 0.8f, 0.0f   // idx=0
+};
+
+unsigned int indices[] = { // idx array for EBO
+    0,1,2,
+    2,1,3
 };
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -64,6 +69,10 @@ int main()
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     // glCullFace(GL_FRONT);
+#endif
+
+#if true
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 #endif
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
@@ -123,6 +132,12 @@ void createATriangle() {
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
 
+    // GPU: EBO
+    unsigned int EBO;
+    glGenBuffers(1, &EBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
     // GPU: vertex shader
     unsigned int vertexShader;
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -148,5 +163,7 @@ void createATriangle() {
 void drawATriangle() {
     glBindVertexArray(VAO);
     glUseProgram(shaderProgram);
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+
+    // glDrawArrays(GL_TRIANGLES, 0, 6); // use VAO
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); // use EBO
 }
