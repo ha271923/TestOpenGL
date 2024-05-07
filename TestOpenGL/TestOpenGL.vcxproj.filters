@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="ch1_01_09_HelloTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ch1_10_Shaders1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

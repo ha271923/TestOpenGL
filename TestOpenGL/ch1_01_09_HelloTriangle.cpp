@@ -76,7 +76,7 @@ int main()
 #endif
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    
+
     createATriangle();
 
     // render loop
