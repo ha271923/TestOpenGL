@@ -21,5 +21,8 @@
     <ClCompile Include="ch1_10_Shaders1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ch1_11_Shaders2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
