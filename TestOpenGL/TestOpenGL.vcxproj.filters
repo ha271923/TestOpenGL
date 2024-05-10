@@ -33,6 +33,12 @@
     <ClCompile Include="ch1_17_Texture1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ch1_18_Texture3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ch1_20_Texture4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -41,17 +47,41 @@
     <ClInclude Include="stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="filesystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="root_directory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="3.3.shader.fs">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </None>
     <None Include="3.3.shader.vs">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="4.1.texture.vs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="4.1.texture.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="4.2.texture.fs">
+      <Filter>Source Files\Shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="pic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wall.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="awesomeface.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
