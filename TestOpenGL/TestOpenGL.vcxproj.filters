@@ -39,6 +39,9 @@
     <ClCompile Include="ch1_20_Texture4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ch1_21_Transformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
@@ -68,6 +71,12 @@
       <Filter>Source Files\Shaders</Filter>
     </None>
     <None Include="4.2.texture.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="5.1.transform.fs">
+      <Filter>Source Files\Shaders</Filter>
+    </None>
+    <None Include="5.1.transform.vs">
       <Filter>Source Files\Shaders</Filter>
     </None>
   </ItemGroup>
